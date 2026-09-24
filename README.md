@@ -6,9 +6,7 @@ The website is bilingual (**English / French**) and includes **dark and light th
 
 ## Live Portfolio
 
-🌐 **Live website:** `ADD-YOUR-VERCEL-URL-HERE`
-
-> After deploying with Vercel, replace the placeholder above with your public URL.
+🌐 **Live website:** https://portfolio-aref.vercel.app/
 
 ## About Me
 
