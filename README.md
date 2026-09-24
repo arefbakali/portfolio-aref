@@ -352,6 +352,7 @@ dist/
 - **GitHub:** https://github.com/arefbakali
 - **LinkedIn:** https://www.linkedin.com/in/aref-bak-ali/
 - **Email:** aref.bak-ali@dauphine.eu
+- **Portfolio:** https://portfolio-aref.vercel.app/
 
 ## Author
 
