@@ -94,6 +94,8 @@ export const research: ResearchItem[] = [
       fr: "Vice-président depuis septembre 2025, après avoir été Coordinateur Intelligence Artificielle d'octobre 2023 à mai 2025.",
     },
     technologies: ['Leadership', 'Artificial Intelligence'],
+    images: ['/awards/itlab/logo.jpg'],
+    imageAspect: 'contain',
   },
   {
     id: 'itlab-events',
