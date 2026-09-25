@@ -3,11 +3,8 @@ import type { Project } from '../types'
 /**
  * Centralized project data. Add screenshots to /public/projects/<id>/
  * and update `cover` / `screenshots` accordingly.
- *
- * Projects marked `public` link to the GitHub profile as a placeholder —
- * replace `githubUrl` with the exact repository URL once it is known.
+ * Public projects need a `githubUrl`; private ones show a lock instead.
  */
-const GITHUB = 'https://github.com/arefbakali'
 
 export const projects: Project[] = [
   {
@@ -126,7 +123,7 @@ export const projects: Project[] = [
     ],
     technologies: ['React', 'TypeScript', 'FastAPI', 'LangGraph', 'Hugging Face', 'vLLM', 'Google Calendar API'],
     repositoryType: 'public',
-    githubUrl: GITHUB, // TODO: replace with the exact KAIROS repository URL
+    githubUrl: 'https://github.com/arefbakali/KAIROS_Agent',
     cover: '/projects/kairos/landing.jpg',
     screenshots: [
       '/projects/kairos/landing.jpg',
