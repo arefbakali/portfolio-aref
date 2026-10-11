@@ -48,8 +48,8 @@ export const profile = {
   } satisfies LocalizedText,
 
   languages: {
-    en: 'Arabic — Native\nFrench — Advanced (C1, TCF)\nEnglish — Upper-intermediate (B2)\nGerman — Elementary (A2)',
-    fr: 'Arabe — Natif\nFrançais — Avancé (C1, TCF)\nAnglais — Intermédiaire avancé (B2)\nAllemand — Élémentaire (A2)',
+    en: 'Arabic — Native\nFrench — Advanced (C1, TCF)\nEnglish — Advanced (C1)\nGerman — Elementary (A2)',
+    fr: 'Arabe — Natif\nFrançais — Avancé (C1, TCF)\nAnglais — Avancé (C1)\nAllemand — Élémentaire (A2)',
   } satisfies LocalizedText,
 
   interests: {
@@ -62,7 +62,10 @@ export const profile = {
   githubHandle: 'arefbakali',
   linkedin: 'https://www.linkedin.com/in/aref-bak-ali/',
   linkedinHandle: '/in/aref-bak-ali',
-  cvUrl: '/cv/Aref_Bak_Ali_CV.pdf',
+  cvUrl: {
+    en: '/cv/Aref_Bak_Ali_CV_EN.pdf',
+    fr: '/cv/Aref_Bak_Ali_CV_FR.pdf',
+  },
   portrait: '/images/portrait.png',
 
   stats: [
@@ -71,7 +74,7 @@ export const profile = {
       label: { en: 'INTERNSHIPS', fr: 'STAGES' } satisfies LocalizedText,
     },
     {
-      value: '13',
+      value: '14',
       label: { en: 'FEATURED PROJECTS', fr: 'PROJETS PRÉSENTÉS' } satisfies LocalizedText,
     },
     {

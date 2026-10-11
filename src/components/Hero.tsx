@@ -70,7 +70,7 @@ export default function Hero() {
             <Linkedin size={14} /> {t.hero.linkedin}
           </a>
           <a
-            href={profile.cvUrl}
+            href={pick(profile.cvUrl)}
             download
             className="flex items-center gap-2 rounded-full border border-border px-5 py-3 font-mono text-xs uppercase tracking-wide text-ink transition-colors hover:border-accent hover:text-accent"
           >

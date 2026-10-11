@@ -8,6 +8,61 @@ import type { Project } from '../types'
 
 export const projects: Project[] = [
   {
+    id: 'freight-optimization',
+    title: {
+      en: 'Humanitarian Freight Optimization — ML & Integer Programming',
+      fr: 'Optimisation du fret humanitaire — ML & programmation en nombres entiers',
+    },
+    category: { en: 'Machine Learning / Optimization', fr: 'Machine Learning / Optimisation' },
+    categories: ['ai-ml', 'data'],
+    year: '2026',
+    shortDescription: {
+      en: 'Machine Learning predicts the cost and delay risk of each transport mode; a MILP then picks the cheapest mode per shipment — about 15% lower freight cost at the same expected delay (simulated).',
+      fr: "Le Machine Learning prédit le coût et le risque de retard de chaque mode de transport ; un MILP choisit ensuite le mode le moins cher par envoi — environ 15 % de fret en moins à retard attendu identique (simulé).",
+    },
+    description: {
+      en: 'A Supply Chain project on real USAID data (SCMS program, 5,948 clean shipments of HIV medicines and test kits, 2006–2015). Gradient Boosting and Logistic Regression experts predict freight cost and delay risk for every transport mode — even those not used — and a Mixed-Integer Linear Program (4,836 binary variables, HiGHS solver) chooses the best mode for 1,209 shipments under delay and carrier-capacity constraints. Includes an interactive web platform and an academic report. Academic project; savings are simulated from model predictions, not observed.',
+      fr: "Un projet Supply Chain sur des données réelles de l'USAID (programme SCMS, 5 948 envois propres de médicaments et tests VIH, 2006–2015). Des experts Gradient Boosting et Régression logistique prédisent le coût de fret et le risque de retard de chaque mode de transport — même ceux non utilisés — puis un programme linéaire en variables mixtes (4 836 variables binaires, solveur HiGHS) choisit le meilleur mode pour 1 209 envois sous contraintes de retard et de capacité des transporteurs. Comprend une plateforme web interactive et un rapport académique. Projet académique : les économies sont simulées à partir des prédictions, pas observées.",
+    },
+    problem: {
+      en: 'For each shipment, a logistician chooses between air, truck, ocean and air charter — often by habit (“when in doubt, fly”) although air costs about four times more per kilogram than road. How can predictions guide this choice to cut freight cost without adding delays or exceeding carrier capacity?',
+      fr: "Pour chaque envoi, le logisticien choisit entre avion, camion, bateau et avion affrété — souvent par habitude (« dans le doute, on prend l'avion ») alors que l'avion coûte environ quatre fois plus cher au kilo que la route. Comment guider ce choix par des prédictions pour réduire le coût du fret sans ajouter de retards ni dépasser la capacité des transporteurs ?",
+    },
+    solution: {
+      en: 'Cleaned hidden text values (never imputed, since that would invent the target), split the data by time (train 2006–2013, test 2014–2015), and trained one cost model and one delay model per transport mode, compared with non-ML baselines. The MILP then selects one mode per shipment, minimizing predicted cost while keeping the expected delay rate at its historical level and truck/ocean tonnage within historical capacity per country. Results were stress-tested with a 30-run Monte Carlo replay using noisy predictions.',
+      fr: "Nettoyage des valeurs textuelles cachées (jamais imputées, ce qui reviendrait à inventer la cible), découpage temporel des données (entraînement 2006–2013, test 2014–2015), puis un modèle de coût et un modèle de retard par mode de transport, comparés à des références sans ML. Le MILP sélectionne ensuite un mode par envoi en minimisant le coût prédit, avec un taux de retard attendu au niveau historique et un tonnage camion/bateau dans la capacité historique par pays. Les résultats ont été éprouvés par un rejeu Monte Carlo de 30 simulations avec des prédictions bruitées.",
+    },
+    highlight: {
+      en: 'Freight cost −15.3% (14.01 → 11.87 M$) at the same 13.7% expected delay · robust saving range 11–15% (simulated)',
+      fr: 'Coût du fret −15,3 % (14,01 → 11,87 M$) à retard attendu identique de 13,7 % · fourchette d’économie robuste 11–15 % (simulée)',
+    },
+    features: [
+      'Data cleaning pipeline with every step logged: hidden text values, duplicates, outliers (10,324 → 5,948 shipments)',
+      'One Gradient Boosting cost model and one Logistic Regression delay model per transport mode',
+      'Cost median error 53% → 36% and delay AUC 0.70 → 0.77 versus non-ML baselines (2014–2015 test period)',
+      'MILP optimization with HiGHS: 4,836 binary variables, 1,226 constraints, solved in about 0.1 s',
+      'A simple ML rule looks as cheap but breaks truck capacity in 5 countries — only the optimization respects every constraint',
+      'Interactive platform: adjustable delay limit and capacity, cost/punctuality trade-off curve, mode-change matrix, shipment explorer and prediction for a new shipment',
+      'Academic report (PDF and Word) and fully reproducible notebook (time-based split, fixed seeds)',
+    ],
+    technologies: ['Python', 'Scikit-learn', 'SciPy (MILP / HiGHS)', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'JavaScript'],
+    repositoryType: 'public',
+    githubUrl: 'https://github.com/arefbakali/humanitarian-freight-ml-optimization',
+    cover: '/projects/freight-optimization/platform-overview.jpg',
+    screenshots: [
+      '/projects/freight-optimization/platform-overview.jpg',
+      '/projects/freight-optimization/platform-optimal-solution.jpg',
+      '/projects/freight-optimization/before-after.jpg',
+      '/projects/freight-optimization/cost-delay-tradeoff.jpg',
+      '/projects/freight-optimization/platform-ml-predictions.jpg',
+      '/projects/freight-optimization/platform-capacities.jpg',
+      '/projects/freight-optimization/data-cleaning-funnel.jpg',
+      '/projects/freight-optimization/cost-vs-weight.jpg',
+      '/projects/freight-optimization/predicted-vs-actual.jpg',
+      '/projects/freight-optimization/roc-curves.jpg',
+    ],
+  },
+  {
     id: 'posture-ai',
     title: {
       en: 'PostureAI — Real-Time Posture Assistant',
