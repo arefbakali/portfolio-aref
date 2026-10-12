@@ -74,7 +74,7 @@ export const profile = {
       label: { en: 'INTERNSHIPS', fr: 'STAGES' } satisfies LocalizedText,
     },
     {
-      value: '14',
+      value: '15',
       label: { en: 'FEATURED PROJECTS', fr: 'PROJETS PRÉSENTÉS' } satisfies LocalizedText,
     },
     {

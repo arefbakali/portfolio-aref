@@ -23,6 +23,7 @@ export const en = {
     code: 'Code',
     privateRepo: 'Private repository',
     viewCode: 'View the code',
+    liveDemo: 'Live demo',
     noResults: 'No projects match this filter yet.',
   },
   modal: {

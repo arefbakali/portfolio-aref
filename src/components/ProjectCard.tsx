@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Github, Lock } from 'lucide-react'
+import { ExternalLink, Github, Lock } from 'lucide-react'
 import type { Project } from '../types'
 import { useLanguage } from '../context/LanguageContext'
 import ProjectCover from './ProjectCover'
@@ -53,7 +53,7 @@ export default function ProjectCard({ project, onOpen }: Props) {
         <h3 className="mt-2 font-display text-lg font-semibold leading-snug text-ink">{pick(project.title)}</h3>
         <p className="mt-2 line-clamp-2 text-sm text-muted">{pick(project.shortDescription)}</p>
 
-        <div className="mt-5">
+        <div className="mt-5 flex flex-wrap items-center gap-2">
           {project.repositoryType === 'public' && project.githubUrl ? (
             <a
               href={project.githubUrl}
@@ -68,6 +68,17 @@ export default function ProjectCard({ project, onOpen }: Props) {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-dashed border-border px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-wide text-muted-2">
               <Lock size={12} /> {t.projects.privateRepo}
             </span>
+          )}
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-1.5 rounded-full border border-border px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-wide text-ink transition-colors hover:border-accent hover:text-accent"
+            >
+              <ExternalLink size={12} /> {t.projects.liveDemo}
+            </a>
           )}
         </div>
       </div>

@@ -8,6 +8,58 @@ import type { Project } from '../types'
 
 export const projects: Project[] = [
   {
+    id: 'candidate-elimination',
+    title: {
+      en: 'Candidate Elimination Studio — Interactive Version Space Visualizer',
+      fr: 'Candidate Elimination Studio — Visualiseur interactif d’espace des versions',
+    },
+    category: { en: 'Machine Learning / Web App', fr: 'Machine Learning / Application web' },
+    categories: ['ai-ml'],
+    year: '2026',
+    shortDescription: {
+      en: 'An interactive web app that runs Mitchell’s Candidate Elimination algorithm one operation at a time and draws the version space as its real Hasse diagram.',
+      fr: "Une application web interactive qui exécute l'algorithme Candidate Elimination de Mitchell opération par opération et dessine l'espace des versions sous la forme de son vrai diagramme de Hasse.",
+    },
+    description: {
+      en: 'A mathematically exact web application for Candidate Elimination: the S and G boundaries, every internal operation of the algorithm, and the version space drawn as a Hasse diagram laid out with ELK. It includes a framework-free typed engine, a step-by-step simulator, classification of new instances with exact evidence, a CSV/Excel/JSON dataset importer and editor, a guided presentation mode, exports (JSON, CSV, SVG, PNG, PDF), unit and end-to-end tests with CI, and a live deployment. Every number and diagram comes from the engine’s real trace, never from hand-drawn data.',
+      fr: "Une application web mathématiquement exacte pour Candidate Elimination : les frontières S et G, chaque opération interne de l'algorithme, et l'espace des versions dessiné comme un diagramme de Hasse agencé avec ELK. Elle comprend un moteur typé sans framework, un simulateur pas à pas, la classification de nouvelles instances avec preuves exactes, un importateur et éditeur de jeux de données CSV/Excel/JSON, un mode présentation guidé, des exports (JSON, CSV, SVG, PNG, PDF), des tests unitaires et de bout en bout avec CI, et un déploiement en ligne. Chaque nombre et chaque schéma provient de la trace réelle du moteur, jamais de données dessinées à la main.",
+    },
+    problem: {
+      en: 'Can the version space of a concept-learning problem be computed exactly and explained one operation at a time, including S generalising, G specialising and the final diamond of consistent hypotheses?',
+      fr: "L'espace des versions d'un problème d'apprentissage de concept peut-il être calculé exactement et expliqué une opération à la fois, y compris la généralisation de S, la spécialisation de G et le « diamant » final des hypothèses cohérentes ?",
+    },
+    solution: {
+      en: 'The whole run is stored as an immutable trace; the simulator, lattice, timeline, pseudocode highlighter and exports are all views over that single trace, so they stay synchronised. The engine handles typed constraints (categorical values, hierarchies, intervals, missing values) and is checked against a brute-force enumeration of the hypothesis space.',
+      fr: "L'exécution complète est stockée sous forme de trace immuable ; le simulateur, le treillis, la frise chronologique, le surlignage du pseudo-code et les exports sont autant de vues sur cette même trace, donc toujours synchronisés. Le moteur gère des contraintes typées (valeurs catégorielles, hiérarchies, intervalles, valeurs manquantes) et est vérifié par énumération exhaustive de l'espace des hypothèses.",
+    },
+    highlight: {
+      en: 'Sport dataset: version space of 6 hypotheses (the “diamond”), verified by brute force',
+      fr: 'Jeu de données Sport : espace des versions de 6 hypothèses (le « diamant »), vérifié par force brute',
+    },
+    features: [
+      'Exact, framework-free typed engine (S/G updates, minimal generalisations and specialisations) verified by brute force',
+      'Step-by-step simulator: example mode and detailed mode, playback controls, scrubber and keyboard shortcuts',
+      'Version space drawn as its real Hasse diagram (ELK layout, zoom, pan, fullscreen), with a boundary view for very large or infinite spaces',
+      'Classification of new instances with exact evidence and vote counts',
+      'CSV / Excel / JSON dataset import wizard and editor, with seven built-in datasets',
+      'Guided fullscreen presentation mode and exports (JSON, CSV, SVG, PNG, PDF report)',
+      'Unit tests (Vitest), end-to-end tests (Playwright) and GitHub Actions CI',
+    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Zustand', 'ELK.js', 'Zod', 'Vitest', 'Playwright'],
+    repositoryType: 'public',
+    githubUrl: 'https://github.com/arefbakali/candidate-elimination-studio',
+    liveUrl: 'https://candidate-elimination-studio.vercel.app/studio',
+    demoVideo: '/projects/candidate-elimination/demo.mp4',
+    cover: '/projects/candidate-elimination/studio-final-diamond.jpg',
+    screenshots: [
+      '/projects/candidate-elimination/studio-final-diamond.jpg',
+      '/projects/candidate-elimination/studio-specialisation.jpg',
+      '/projects/candidate-elimination/presentation.jpg',
+      '/projects/candidate-elimination/studio-birds-light.jpg',
+      '/projects/candidate-elimination/landing.jpg',
+    ],
+  },
+  {
     id: 'freight-optimization',
     title: {
       en: 'Humanitarian Freight Optimization — ML & Integer Programming',

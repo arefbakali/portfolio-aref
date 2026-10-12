@@ -25,6 +25,7 @@ export const fr: Dictionary = {
     code: 'Code',
     privateRepo: 'Dépôt privé',
     viewCode: 'Voir le code',
+    liveDemo: 'Démo en ligne',
     noResults: 'Aucun projet ne correspond à ce filtre pour le moment.',
   },
   modal: {

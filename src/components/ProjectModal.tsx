@@ -180,7 +180,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   </div>
                 )}
 
-                <div className="mt-9">
+                <div className="mt-9 flex flex-wrap items-center gap-3">
                   {project.repositoryType === 'public' && project.githubUrl ? (
                     <a
                       href={project.githubUrl}
@@ -194,6 +194,16 @@ export default function ProjectModal({ project, onClose }: Props) {
                     <span className="inline-flex cursor-not-allowed items-center gap-2 rounded-full border border-dashed border-border px-5 py-3 font-mono text-xs uppercase tracking-wide text-muted-2">
                       <Lock size={14} /> {t.projects.privateRepo}
                     </span>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 font-mono text-xs font-semibold uppercase tracking-wide text-ink transition-colors hover:border-accent hover:text-accent"
+                    >
+                      {t.projects.liveDemo} <ExternalLink size={13} />
+                    </a>
                   )}
                 </div>
               </div>

@@ -27,6 +27,8 @@ export interface Project {
   technologies: string[]
   repositoryType: 'public' | 'private'
   githubUrl?: string
+  /** Link to the deployed app, shown as a "Live demo" button. */
+  liveUrl?: string
   interactiveMap?: string
   demoVideo?: string
   cover: string | null
